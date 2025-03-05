@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Globe Visualization</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/business-data.css">
+</head>
+<body>
+    <div id="globe-container"></div>
+    <nav id="main-navigation"></nav>
+
+    <!-- Add this after your globe container -->
+    <div class="data-controls">
+        <div class="data-layers">
+            <button class="data-layer-toggle" data-layer="revenue" disabled>
+                Revenue Distribution
+            </button>
+            <button class="data-layer-toggle" data-layer="employees" disabled>
+                Employee Count
+            </button>
+            <button class="data-layer-toggle" data-layer="market_share" disabled>
+                Market Share
+            </button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script src="assets/js/globe.js"></script>
+    <script src="assets/js/navigation.js"></script>
+    <script src="assets/js/business-data.js"></script>
+    <script src="assets/js/accessibility.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html> 

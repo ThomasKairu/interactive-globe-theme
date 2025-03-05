@@ -1,0 +1,57 @@
+@media screen and (max-width: 768px) {
+    #main-navigation {
+        top: auto;
+        bottom: 20px;
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+    .continent-buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 90vw;
+        min-width: auto;
+    }
+
+    .button-wrapper {
+        flex: 0 1 auto;
+    }
+
+    .continent-button {
+        min-width: auto;
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .tooltip {
+        left: 50%;
+        top: auto;
+        bottom: calc(100% + 10px);
+        transform: translateX(-50%);
+    }
+
+    .location-popup {
+        right: 50%;
+        bottom: 100px;
+        top: auto;
+        transform: translateX(50%);
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .location-popup .content {
+        max-height: 200px;
+    }
+
+    @keyframes popupSlideIn {
+        from {
+            opacity: 0;
+            transform: translate(50%, 50px);
+        }
+        to {
+            opacity: 1;
+            transform: translate(50%, 0);
+        }
+    }
+}

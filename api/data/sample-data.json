@@ -1,0 +1,58 @@
+{
+    "North America": [
+        {
+            "name": "New York HQ",
+            "lat": 40.7128,
+            "lng": -74.0060,
+            "type": "headquarters",
+            "metrics": {
+                "revenue": 45000000,
+                "employees": 850,
+                "market_share": 28
+            },
+            "address": "350 Fifth Avenue, New York, NY 10118",
+            "contact_info": "Tel: +1 212-555-0123\nEmail: ny@example.com"
+        },
+        {
+            "name": "Chicago Office",
+            "lat": 41.8781,
+            "lng": -87.6298,
+            "type": "regional_office",
+            "metrics": {
+                "revenue": 32000000,
+                "employees": 380,
+                "market_share": 18
+            },
+            "address": "233 S Wacker Dr, Chicago, IL 60606",
+            "contact_info": "Tel: +1 312-555-0125\nEmail: chicago@example.com"
+        }
+    ],
+    "Europe": [
+        {
+            "name": "London Office",
+            "lat": 51.5074,
+            "lng": -0.1278,
+            "type": "regional_office",
+            "metrics": {
+                "revenue": 28000000,
+                "employees": 420,
+                "market_share": 15
+            },
+            "address": "30 St Mary Axe, London EC3A 8BF",
+            "contact_info": "Tel: +44 20-555-0124\nEmail: london@example.com"
+        },
+        {
+            "name": "Paris Branch",
+            "lat": 48.8566,
+            "lng": 2.3522,
+            "type": "branch",
+            "metrics": {
+                "revenue": 25000000,
+                "employees": 290,
+                "market_share": 12
+            },
+            "address": "1 Avenue des Champs-Élysées, 75008 Paris",
+            "contact_info": "Tel: +33 1-555-0126\nEmail: paris@example.com"
+        }
+    ]
+} 
