@@ -348,7 +348,15 @@ class BusinessDataManager {
             console.log('Continent selected:', event.detail);
             this.selectedContinent = event.detail;
             this.loadContinentData(event.detail);
-            this.updateButtonsState(true);
+            
+            // Enable buttons and update their appearance
+            const buttons = document.querySelectorAll('.data-layer-toggle');
+            buttons.forEach(button => {
+                button.removeAttribute('disabled');
+                button.style.pointerEvents = 'auto';
+                button.style.opacity = '1';
+                button.classList.add('active');
+            });
         });
 
         document.addEventListener('continentDeselected', () => {
@@ -356,7 +364,15 @@ class BusinessDataManager {
             this.selectedContinent = null;
             this.hideDataLayer();
             this.clearMarkers();
-            this.updateButtonsState(false);
+            
+            // Disable buttons and update their appearance
+            const buttons = document.querySelectorAll('.data-layer-toggle');
+            buttons.forEach(button => {
+                button.setAttribute('disabled', 'disabled');
+                button.style.pointerEvents = 'none';
+                button.style.opacity = '0.6';
+                button.classList.remove('active', 'selected');
+            });
         });
     }
 
@@ -459,7 +475,7 @@ class BusinessDataManager {
     async toggleDataLayer(type) {
         console.log('Toggling data layer:', type);
         
-        // Remove active class from all buttons
+        // Remove selected class from all buttons
         document.querySelectorAll('.data-layer-toggle').forEach(button => {
             button.classList.remove('selected');
         });
@@ -475,12 +491,24 @@ class BusinessDataManager {
         try {
             // Add selected class to clicked button
             const button = document.querySelector(`[data-layer="${type}"]`);
-            button.classList.add('selected');
+            if (button) {
+                button.classList.add('selected');
+            }
+
+            if (!this.selectedContinent || !this.selectedContinent.name) {
+                console.error('No continent selected');
+                return;
+            }
 
             console.log('Selected continent:', this.selectedContinent.name);
             
             // Get data for the selected continent
             const continentData = this.continentData[this.selectedContinent.name];
+            if (!continentData) {
+                console.error('No data for continent:', this.selectedContinent.name);
+                return;
+            }
+            
             console.log('Using data:', continentData);
             
             if (continentData && continentData.locations) {

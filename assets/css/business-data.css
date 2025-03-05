@@ -18,23 +18,23 @@
     color: white;
     border-radius: 6px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease;
+    opacity: 0.6;
 }
 
-.data-layer-toggle[disabled] {
-    opacity: 0.6;
-    pointer-events: none;
-    cursor: not-allowed;
+.data-layer-toggle:not([disabled]) {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.data-layer-toggle.selected {
+    background-color: #4CAF50;
+    color: white;
 }
 
 .data-layer-toggle.active {
     opacity: 1;
     pointer-events: auto;
-}
-
-.data-layer-toggle.selected {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.6);
 }
 
 .data-layer-toggle:not([disabled]):hover {
